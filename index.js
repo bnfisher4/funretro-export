@@ -13,7 +13,7 @@ async function run() {
     const browser = await chromium.launch();
     const page = await browser.newPage();
 
-    await page.goto(url);
+    await page.goto("http://funretro.io/board");
     await page.waitForSelector('.easy-card-list');
 
     const boardTitle = await page.$eval('.board-name', (node) => node.innerText.trim());
