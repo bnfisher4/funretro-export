@@ -15,6 +15,7 @@ async function run() {
 
     await page.goto("http://funretro.io/board");
     await page.waitForSelector('.easy-card-list');
+    //tried ",{state: "visible"}" here but getting same Timeout error
 
     const boardTitle = await page.$eval('.board-name', (node) => node.innerText.trim());
 
